@@ -14,13 +14,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
-using WebAPICoreDapper.Constants;
-using WebAPICoreDapper.Data;
 using WebAPICoreDapper.Data.Models;
 using WebAPICoreDapper.Data.ViewModels;
 using WebAPICoreDapper.Extensions;
 using WebAPICoreDapper.Filters;
-
+using WebAPICoreDapper.Utilities.Constants;
 
 namespace WebAPICoreDapper.Controllers
 {

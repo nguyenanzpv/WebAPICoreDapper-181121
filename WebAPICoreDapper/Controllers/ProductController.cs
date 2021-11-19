@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using WebAPICoreDapper.Data.Models;
 using WebAPICoreDapper.Data.Repositories;
 using WebAPICoreDapper.Data.Repositories.Interfaces;
+using WebAPICoreDapper.Data.ViewModels;
 using WebAPICoreDapper.Extensions;
 using WebAPICoreDapper.Filters;
 using WebAPICoreDapper.Resources;
@@ -97,6 +98,19 @@ namespace WebAPICoreDapper.Controllers
         {
             await _productRepository.Delete(id);
             return Ok();
+        }
+
+        [HttpGet("{id}/attributes")]
+        public async Task<List<ProductAttributeViewModel>> GetProductAttributes(int id)
+        {
+            return await _productRepository.GetAttributes(id, CultureInfo.CurrentCulture.Name);
+        }
+
+        [HttpPost("search-attribute")]
+        public async Task<PagedResult<Product>> SearchProductByAttributes(string keyword,
+            int categoryId, string size, int pageIndex, int pageSize)
+        {
+            return await _productRepository.SearchByAttributes(keyword, CultureInfo.CurrentCulture.Name, categoryId, size, pageIndex, pageSize);
         }
     }
 }

@@ -9,8 +9,8 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using WebAPICoreDapper.Data.Models;
-using WebAPICoreDapper.Dtos;
 using WebAPICoreDapper.Filters;
+using WebAPICoreDapper.Utilities.Dtos;
 
 namespace WebAPICoreDapper.Controllers
 {
